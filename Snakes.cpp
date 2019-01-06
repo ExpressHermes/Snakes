@@ -222,13 +222,13 @@ void exitnow() //to exit the game
 
 void setDir(char a) //to set direction
 {
-    if (a=='a' && dir!=2) //when a is pressed and snake is not moving towards right
+    if (a=='a' && dir!=2) //when 'a' is pressed and snake is not moving towards right
       dir=1; //left
-    if (a=='d' && dir!=1) //when d is pressed and snake is not moving towards left
+    if (a=='d' && dir!=1) //when 'd' is pressed and snake is not moving towards left
       dir=2; //right
-    if (a=='w' && dir!=4) //when w is pressed and snake is not moving in the back(bottom) direction
+    if (a=='w' && dir!=4) //when 'w' is pressed and snake is not moving in the back(bottom) direction
       dir=3; //front
-    if (a=='s' && dir!=3) //when s is pressed and direction is not moving in the front(up) direction
+    if (a=='s' && dir!=3) //when 's' is pressed and direction is not moving in the front(up) direction
       dir=4; //back
 }
 
@@ -390,10 +390,10 @@ void a(int value, void*)
 void printBonus() // to print bonus 
 {
   if (bc==1)
-  {bx=50+rand()%700;by=50+rand()%500;} //genrating random position for bonus
+  {bx=50+rand()%700;by=50+rand()%500;} //genrating random position for bonus 
   if ((bc/10)%2==0)
-    for (int i=bx-6;i<=bx+6;i++)  /////some explain use of bc and if///////
-    for (int j=by-6;j<=by+6;j++)
+    for (int i=bx-6;i<=bx+6;i++) // bx: x-cordinate of bonus
+    for (int j=by-6;j<=by+6;j++) // by: y-cordinate of bonus
        img.at<uchar>(j, i) =200;// printing bonus 
   bc++;
 }
