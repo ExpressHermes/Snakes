@@ -293,11 +293,14 @@ void giveFood()//to generate food
 {
   if (fc==1)
   {
-    srand(::count);
-    fx=50+rand()%700;fy=50+rand()%500;//random postion for food b/w 50 to 750 horizontal pixels and 50 to 550 verical pixels
+    do
+    {
+       srand(::count);
+       fx=50+rand()%700;fy=50+rand()%500;//random postion for food b/w 50 to 750 horizontal pixels and 50 to 550 vertical pixels
+    }while((fx>300&&fx<500)&&(fy>250&&fy<265));//to regenerate food's coordinate if they are on the mid-walls
     fc=0;
   }
-  for (int i=fx-(12-level);i<=fx+(12-level);i++) //determining food's size according to the level(larger for low level and vice versa) 
+  for (int i=fx-(12-level);i<=fx+(12-level);i++)//determining food's size according to the level(larger for low level and vice versa) 
     for (int j=fy-(12-level);j<=fy+(12-level);j++)//used 12 to make sure food is visble in the last level(10)
      img.at<uchar>(j, i) =200;//food's pixel colour(200) lighter than the snake(255)
   ::count++;
