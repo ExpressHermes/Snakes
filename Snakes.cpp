@@ -402,7 +402,7 @@ void gameOver()// to exit game
 }
 void a(int value, void*)
 {
-    printf("Level set to: %2d\n",value);
+    printf("Level set to: %2d\n",value);//to print the level on which game is being played
     if (value<oldvalue)
     {
     arrx=(int*)realloc(arrx,(len-leninc)*sizeof(int));
