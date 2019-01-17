@@ -332,7 +332,7 @@ void incLen()// to increase length
   int yd=arry[len-2]-arry[len-1];// determining the change in width
   arrx=(int*)realloc(arrx,(len+leninc)*sizeof(int));
   arry=(int*)realloc(arry,(len+leninc)*sizeof(int));
-  if (xd>0)
+  if (xd>0)//to increase the length by 1 pixel when snake is moving towards left
   {
     for (int i=len;i<len+leninc;i++)
       {
@@ -342,7 +342,7 @@ void incLen()// to increase length
     for (int i=len;i<len+leninc;i++)
       arry[i]=arry[i-1];
   }
-  if (xd<0)
+  if (xd<0)//to increase the length by 1 pixel when snake is moving towards right
   {
     for (int i=len;i<len+leninc;i++)
       {
@@ -352,7 +352,7 @@ void incLen()// to increase length
     for (int i=len;i<len+leninc;i++)
       arry[i]=arry[i-1];
   }
-  if (yd>0)
+  if (yd>0)//to increase the length by 1 pixel when snake is moving upwards
   {
     for (int i=len;i<len+leninc;i++)
       {
@@ -362,7 +362,7 @@ void incLen()// to increase length
     for (int i=len;i<len+leninc;i++)
       arrx[i]=arrx[i-1];
   }
-  if (yd<0)
+  if (yd<0)//to increase the length by 1 pixel when snake is moving downwards
   {
     for (int i=len;i<len+leninc;i++)
       {
